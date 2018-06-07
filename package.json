@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/gigavoid/ts-meme-of-the-hour/issues"
   },
-  "homepage": "https://github.com/gigavoid/ts-meme-of-the-hour#readme"
+  "homepage": "https://github.com/gigavoid/ts-meme-of-the-hour#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10",
+    "node-teamspeak": "^1.0.10",
+    "util": "^0.10.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
 }
