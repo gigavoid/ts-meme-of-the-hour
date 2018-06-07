@@ -1,0 +1,20 @@
+{
+  "name": "ts-meme-of-the-hour",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigavoid/ts-meme-of-the-hour.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigavoid/ts-meme-of-the-hour/issues"
+  },
+  "homepage": "https://github.com/gigavoid/ts-meme-of-the-hour#readme"
+}
