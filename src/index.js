@@ -12,20 +12,20 @@ const CHANNEL_PREFIX = process.env.CHANNEL_PREFIX || 'Meme of the Hour'
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const readRandomMeme = async memeFiles => {}
-
-const cl = bluebird.promisifyAll(new TeamSpeakClient(TS_HOST))
 ;(async () => {
   const memeFiles = await fs.readdirAsync(__dirname + '/memes')
-
-  await cl.sendAsync('login', {
-    client_login_name: TS_NAME,
-    client_login_password: TS_PASSWORD
-  })
-  await cl.sendAsync('use', { sid: 1 })
 
   let memes = []
 
   while (true) {
+    const cl = bluebird.promisifyAll(new TeamSpeakClient(TS_HOST))
+
+    await cl.sendAsync('login', {
+      client_login_name: TS_NAME,
+      client_login_password: TS_PASSWORD
+    })
+    await cl.sendAsync('use', { sid: 1 })
+
     const channelList = await cl.sendAsync('channellist')
     const memechat = channelList.find(
       channel => channel.channel_name.indexOf(CHANNEL_PREFIX) === 0
@@ -68,6 +68,8 @@ const cl = bluebird.promisifyAll(new TeamSpeakClient(TS_HOST))
         channel_flag_permanent: true
       })
     }
+
+    await cl.sendAsync('logout')
 
     const nextHour = new Date()
     nextHour.setMinutes(0, 0, 0)
